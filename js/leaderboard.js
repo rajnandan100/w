@@ -59,7 +59,7 @@ class LeaderboardManager {
             const resultsRef = firebase.firestore().collection('quizResults');
             const snapshot = await resultsRef
                 .orderBy('completedAt', 'desc')  // Order by completion time (latest first)
-                .limit(4100)  // Get recent 100 results
+                .limit(100)  // Get recent 100 results
                 .get();
 
             if (snapshot.empty) {
